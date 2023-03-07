@@ -1,0 +1,33 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1>Welcome</h1>
+    <p class="lead">This is a service to consolidate a number of the IT and network items we use.</p>
+    <p><a href="" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>NAS Server</h2>
+        <p>
+            Access the NAS system and system monitoring.
+            While this does not immediatly allow access to the contents of the NAS that will eventually
+            be implemented.
+        </p>
+        <p><a class="btn btn-default" href="">Access &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Security Server</h2>
+        <p>Access the server to manage the IP cameras including live view, footage review and server configuration. </p>
+        <p><a class="btn btn-default" href="">Access &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Minecraft Server</h2>
+        <p>If you would like to join our Minecraft Bedrock Server, join here at:</p>
+        <p><a class="btn btn-default" href="">MCserver.StephenKalei.com</a></p>
+    </div>
+</div>
+
+{% endblock %}

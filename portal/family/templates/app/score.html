@@ -1,0 +1,50 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+{% if complete %}
+<script>
+  startConfetti();
+</script>
+{% endif %}
+
+<h2>{{ title }}</h2>
+<hr>
+<p>Check back here to track your overall progress.</p>
+<table>
+    <tr>
+        <th>Complete</th>
+        <th>Partial</th>
+        <th>Incomplete</th>
+    </tr>
+    <tr>
+        <td>{{ complete }}</td>
+        <td>{{ partial }}</td>
+        <td>{{ incomplete }}</td>
+    </tr>
+    <tr>
+        <td>{{ complete_perc }}%</td>
+        <td>{{ partial_perc }}%</td>
+        <td>{{ incomplete_perc }}%</td>
+    </tr>
+</table>
+
+{% endblock %}

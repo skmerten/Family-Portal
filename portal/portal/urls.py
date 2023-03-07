@@ -15,7 +15,31 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+import family.views
+import family.forms
+
+from datetime import datetime
+import django.contrib.auth.views
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', family.views.home, name='home'),
+
+
+    # Login / Logout URLS
+    path('login/',
+        django.contrib.auth.views.LoginView.as_view(),
+        {
+            'template_name': 'app/login.html',
+            'authentication_form': family.forms.BootstrapAuthenticationForm,
+            'extra_context':
+            {
+                'title': 'Log in',
+                'year': datetime.now().year,
+            }
+        },
+        name='login'),
+    path('logout/', family.views.logout, name='logout'),
+
 ]

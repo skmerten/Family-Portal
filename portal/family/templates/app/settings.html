@@ -1,0 +1,56 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: none;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+</style>
+<h2>{{ title }}</h2>
+<hr>
+
+<form action="/settings" method="post">
+    {% csrf_token %}
+    <table>
+    <tr>
+        <th>Number of questions to generate each time: </th>
+        <td><input type="text" name="questionNum"></td>
+    </tr>
+    <tr>
+        <th>Reset all questions to incomplete: 
+        <span style="text-size:15px">Type 'Reset' to reset questions.</span></th>
+        <td><input type="text" name="reset"></td>
+    </tr>
+    <tr>
+        <th>Number of correct answers before completed: </th>
+        <td><input type="text" name="numberCorrect"></td>
+    </tr>
+    </table>
+    <input type="submit" value="Submit" />
+</form>
+{% endblock %}
