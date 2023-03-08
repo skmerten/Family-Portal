@@ -20,6 +20,17 @@ def home(request):
         }
     )
 
+def about(request):
+    """Renders the home page."""
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/about.html',
+        {
+            'title':'About this portal',
+            'year':datetime.now().year,
+        }
+    )
 def logout(request):
     """Renders the home page."""
     assert isinstance(request, HttpRequest)

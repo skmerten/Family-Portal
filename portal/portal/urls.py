@@ -25,6 +25,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', family.views.home, name='home'),
+    path('about/', family.views.about, name='about'),
 
 
     # Login / Logout URLS
